@@ -1,0 +1,9 @@
+# ignore node_modules in git commit
+node_modules/
+
+# ignore environment variables
+.env
+
+# React production build
+build/
+view/build/
