@@ -1,6 +1,6 @@
 # TaskFlow - Full-Stack Task Manager
 
-A modern full-stack task management application built with React, Express, Node.js, and PostgreSQL.
+A full-stack task management application built with React, Express, Node.js, and PostgreSQL.
 
 ## Features
 
