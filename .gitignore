@@ -7,3 +7,10 @@ node_modules/
 # React production build
 build/
 view/build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# logs
+npm-debug.log*
