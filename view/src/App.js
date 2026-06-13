@@ -32,9 +32,10 @@ const App = () => {
     try {
       const data = await getTodos();
 
-      setTodoList(data);
+      setTodoList(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error(err);
+      setTodoList([]);
     }
   };
 
