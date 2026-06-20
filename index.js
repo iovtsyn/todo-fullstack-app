@@ -7,7 +7,20 @@ const todoRoutes = require('./routes/todo');
 const app = express();
 const port = process.env.PORT || 8000;
 
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://todo-fullstack-tan-xi.vercel.app',
+  ],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+}));
+
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('TaskFlow API is running');
+});
 
 app.use('/api', todoRoutes);
 
