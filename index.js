@@ -9,8 +9,8 @@ const port = process.env.PORT || 8000;
 
 const allowedOrigins = [
   'http://localhost:3000',
+  'http://127.0.0.1:3000',
   'https://todo-fullstack-app-omega.vercel.app',
-  'https://todo-fullstack-tan-xi.vercel.app',
 ];
 
 app.use(cors({
