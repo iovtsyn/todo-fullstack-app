@@ -10,7 +10,7 @@ const port = process.env.PORT || 8000;
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://todo-fullstack-tan-xi.vercel.app',
+    'https://todo-fullstack-tan-omega.vercel.app',
   ],
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type'],
