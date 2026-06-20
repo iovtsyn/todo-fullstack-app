@@ -7,14 +7,26 @@ const todoRoutes = require('./routes/todo');
 const app = express();
 const port = process.env.PORT || 8000;
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://todo-fullstack-app-omega.vercel.app',
+  'https://todo-fullstack-tan-xi.vercel.app',
+];
+
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://todo-fullstack-tan-omega.vercel.app',
-  ],
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+
+    callback(new Error('Not allowed by CORS'));
+  },
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
 }));
+
+app.options('*', cors());
 
 app.use(express.json());
 
